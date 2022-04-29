@@ -5,7 +5,7 @@ v20.
 v21.
 v22.
 
-[] (DB) Skapa inlogg table och se till att meeps funkar.
+[x] (DB) Skapa inlogg table och se till att meeps funkar.
 [] Lägga till routes.
 [] Bygga sidan med nunjucks.
 [] Styles med bootstrap
