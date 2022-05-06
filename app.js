@@ -3,11 +3,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
+const nunjucks = require('nunjucks');
+
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 var app = express();
+
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -22,6 +30,6 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 module.exports = app;
