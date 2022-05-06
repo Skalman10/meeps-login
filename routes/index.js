@@ -3,27 +3,24 @@ var router = express.Router();
 const pool = require('../database');
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
-  console.log('ASdasdasdas');
+router.get('/', async function (req, res, next) {
   await pool.promise()
-  .query(`SELECT * FROM iskthl_meeps`)
-  .then(([rows, fields]) => {
+    .query(`SELECT * FROM iskthl_meeps ORDER BY created_at`)
+    .then(([rows, fields]) => {
       console.log(rows);
-      res.json({
-          meeps: {
-              data: rows
-          }
+      res.render('index.njk', {
+        title: 'Homepage',
+        meeps: rows
       });
-  })
-  .catch(err => {
+    })
+    .catch(err => {
       console.log(err);
       res.status(500).json({
-          tasks: {
-              error: `Error getting meeps`
-          }
+        tasks: {
+          error: `Error getting meeps`
+        }
       })
-  });
-  res.render('index.njk', { title: 'Homepage' });
+    });
 });
 
 module.exports = router;

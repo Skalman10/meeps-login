@@ -1,0 +1,12 @@
+{% extends 'layout.njk' %}
+{% block  content %}
+    <main>
+        <ul>
+            {% for meep in meeps %}
+                <li>
+                    <h6>{{ meep.body }}</h6>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+</main>
