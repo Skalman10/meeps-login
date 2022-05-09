@@ -1,6 +1,7 @@
 {% extends 'layout.njk' %}
 {% block  content %}
     <main>
+            {% include 'components/meepsform.njk' %}
         <ul>
             {% for meep in meeps %}
                 <li>
