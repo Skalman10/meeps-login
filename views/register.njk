@@ -1,0 +1,22 @@
+{% extends 'layout.njk' %}
+{% block  content %}
+    <main class="form-signin">
+        <form action="/api/register" method="post">
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+                    <div class="fadeIn first">
+                        <img
+                            src="https://cdn.discordapp.com/emojis/385475006525603846.webp?size=128&quality=lossless"
+                            id="icon"
+                            alt="User Icon"/>
+                    </div>
+                    <form>
+                        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+                        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+                        <input type="submit" class="fadeIn fourth" value="Create account">
+                    </form>
+                </div>
+            </div>
+        </form>
+    </main>
+{% endblock %}

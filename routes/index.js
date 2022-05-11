@@ -27,4 +27,8 @@ router.get('/login', function(req, res, next) {
   res.render('login.njk', { title: 'login'});
 });
 
+router.get('/register', function(req, res, next) {
+  res.render('register.njk', { title: 'register'});
+});
+
 module.exports = router;
