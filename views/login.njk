@@ -1,0 +1,21 @@
+{% extends 'layout.njk' %}
+{% block  content %}
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first">
+                <img
+                    src="https://cdn.discordapp.com/emojis/385475006525603846.webp?size=128&quality=lossless"
+                    id="icon"
+                    alt="User Icon"/>
+            </div>
+            <form>
+                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Need an account?</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
