@@ -39,6 +39,7 @@ router.post('/register', async function (req, res, next) {
         await pool.promise()
         .query('INSERT INTO iskthl_login (username, password) VALUES (?,?)', [username,hash])
         .then(([rows, fields]) => {
+            req.session.user = username;
             res.redirect("/");
         }).catch(err => {
             console.log(err)
