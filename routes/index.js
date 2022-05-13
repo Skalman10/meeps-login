@@ -31,4 +31,8 @@ router.get('/register', function(req, res, next) {
   res.render('register.njk', { title: 'register'});
 });
 
+router.get('/profile', function(req, res, next) {
+  res.render('profile.njk', { title: 'register', user: req.session.user });
+});
+
 module.exports = router;
