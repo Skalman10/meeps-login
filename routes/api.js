@@ -32,24 +32,18 @@ router.post('/meeps', async (req, res, next) => {
 );
 
 router.post('/register', async function (req, res, next) {
-    /*
     const username = req.body.user;
     const password = req.body.password;
 
     bcrypt.hash(password, 10, async function (err, hash) {
-
         await pool.promise()
-        .query('INSERT INTO login (user, password) VALUES (?,?)', [username,hash])
+        .query('INSERT INTO iskthl_login (username, password) VALUES (?,?)', [username,hash])
         .then(([rows, fields]) => {
-            req.session.user = username;
-            res.redirect("/secret");
+            res.redirect("/");
         }).catch(err => {
             console.log(err)
-            res.status(500).redirect("/register?response=1");
         });
-
     });
-    */
 })
 
 module.exports = router;
