@@ -72,4 +72,6 @@ router.post('/login', async function (req, res, next) {
             res.status(500);
         });
 });
+
+router.get()
 module.exports = router;
