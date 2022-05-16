@@ -7,8 +7,6 @@
     "dev": "nodemon -e js,html,njk ./bin/www"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-fetch": "^3.0.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
