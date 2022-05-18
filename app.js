@@ -4,7 +4,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 const nunjucks = require('nunjucks');
-const session = require('express-session')
+const session = require('express-session');
+const fileUpload = require('express-fileupload');
+
 
 require('dotenv').config();
 
@@ -12,7 +14,7 @@ var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 
 var app = express();
-
+app.use(fileUpload());
 nunjucks.configure('views', {
   autoescape: true,
   express: app
