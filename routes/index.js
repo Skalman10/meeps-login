@@ -23,15 +23,15 @@ router.get('/', async function (req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login.njk', { title: 'login'});
+  res.render('login.njk', { title: 'login', user: req.session.user});
 });
 
 router.get('/register', function(req, res, next) {
-  res.render('register.njk', { title: 'register'});
+  res.render('register.njk', { title: 'register', user: req.session.user});
 });
 
 router.get('/profile', function(req, res, next) {
-  res.render('profile.njk', { title: 'register', user: req.session.user });
+  res.render('profile.njk', { title: 'register', user: req.session.user});
 });
 
 module.exports = router;
