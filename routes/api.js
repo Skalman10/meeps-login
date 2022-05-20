@@ -76,14 +76,15 @@ router.post('/login', async function (req, res, next) {
 router.post('/upload', function(req, res) {
     let sampleFile;
     let uploadPath;
-  
+    let user = req.session.user;
     if (!req.files || Object.keys(req.files).length === 0) {
       return res.status(400).send('No files were uploaded.');
     }
   
     // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
     sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/' + sampleFile.name;
+    console.log(sampleFile);
+    uploadPath = __dirname +'/images/' + user + '.' + sampleFile.name.split('.').pop();
   
     // Use the mv() method to place the file somewhere on your server
     sampleFile.mv(uploadPath, function(err) {
@@ -93,4 +94,4 @@ router.post('/upload', function(req, res) {
       res.send('File uploaded!');
     });
   });
-module.exports = router;
+module.exports = router;    
