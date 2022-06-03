@@ -93,4 +93,34 @@ router.post('/upload', function (req, res) {
         res.send('File uploaded!');
     });
 });
+
+
+router.get('/meeps/:id/delete', async (req, res, next) =>  {
+    const id = req.params.id;
+    if (isNaN(req.params.id)) {
+        res.status(400).json({
+            meeps: {
+                error: 'Bad request'
+            }
+        });
+    }
+    await pool.promise()
+        .query('DELETE FROM iskthl_meeps WHERE id = ?', [id])
+        .then((response) => {
+            console.log(response);
+            if (response[0].affectedRows === 1) {
+            res.redirect('/');
+        } else {
+            res.status(400).redirect('/');
+        }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                meeps: {
+                    error: 'Error getting meeps'
+                }
+            })
+        });
+});
 module.exports = router;    

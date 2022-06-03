@@ -10,8 +10,11 @@
                             <p class="card-text">{{ meep.body }}</p>
                         </div>
                     </div>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endblock %}
-</main>
+                </div>
+                <a href="/api/meeps/{{ meep.id }}/delete" class="btn btn-sm btn-danger">
+                    Delete meep
+                </a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>{% endblock %}</main>
