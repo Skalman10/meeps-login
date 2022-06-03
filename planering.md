@@ -6,9 +6,9 @@ v21.
 v22.
 
 [x] (DB) Skapa inlogg table och se till att meeps funkar.
-[] Login/Register routes.
-[] Bygga sidan med nunjucks.
-[] Bootstrap navbar med tillhörande css och knappar.
-[] Meeps feed med bootstrap kort.
-[] Inloggnings sida med kryptering av lösenord och sparning av användare
-[] CSS  
+[x] Login/Register routes.
+[x] Bygga sidan med nunjucks.
+[x] Bootstrap navbar med tillhörande css och knappar.
+[x] Meeps feed med bootstrap kort.
+[x] Inloggnings sida med kryptering av lösenord och sparning av användare
+[x] CSS  
